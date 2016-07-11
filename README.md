@@ -38,11 +38,7 @@ $ chmod +x gradlew
 **3:** Make build
 ```
 For Debug:
-$ ./gradlew assembleDebug
-```
-```
-For Release:
-$ ./gradlew assembleRelease
+$ ./gradlew debug
 ```
 
 **Distributing apk with Fabric/Crashlytics plugin:**
@@ -58,9 +54,5 @@ work_dirrectory/beta_distribution_emails.txt
 **3:** Now build and distribute in one command:
 ```
 Debug
-$ ./gradlew assembleDebug crashlyticsUploadDistributionDebug --stacktrace
-```
-```
-Release
-$ ./gradlew assembleRelease crashlyticsUploadDistributionRelease --stacktrace
+$ ./gradlew debug crashlyticsUploadDistributionDebug --stacktrace
 ```
