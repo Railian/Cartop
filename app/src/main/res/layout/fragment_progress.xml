@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context=".ui.program.info.ProgramInfoActivity">
+
+    <View
+        android:id="@+id/fragment_progress_vBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:alpha="0.8f"
+        tools:background="@color/colorPrimaryDark" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/fragment_progress_llContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ProgressBar
+                android:id="@+id/fragment_progress_pbProgress"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:indeterminate="true"
+                tools:indeterminateTint="@color/colorAccent" />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="8dp" />
+
+            <TextView
+                android:id="@+id/fragment_progress_tvMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                tools:text="Message"
+                tools:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/fragment_progress_btAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/bg_button_accent"
+            android:gravity="center"
+            android:text="Dismiss"
+            android:textColor="@color/colorTextIcons" />
+
+    </LinearLayout>
+
+</RelativeLayout>
