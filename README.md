@@ -3,40 +3,31 @@
 **Workspace setup process**
 ------------------------
 
-**1:** Navigate to your desired directory (here and later - 'Work' directory):
+**1:** Navigate to your desired directory (here and later - 'work_directory'):
 ```
 $ cd /path/to/your/desired/directory
 ```
 
 **2:**  Execute next command (clone git repo):
 ```
-$ git clone https://github.com/alexeypro/rapidus-mobile-android.git
+$ git clone https://github.com/Raylyan/Cartop.git
 ```
 
-**3:** Open Android Studio, choose "Open an existing project", and open selected directory
+**3:** Download and install [Android Studio](https://developer.android.com/studio/index.html):
+
+**4:** Open Android Studio, choose "Open an existing project", and open selected directory
 ```
-For Driver:
-your_directory/rapidus-mobile-android/RapidusDriver/
-```
-```
-For Client:
-your_directory/rapidus-mobile-android/RapidusClient/
+work_directory/
 ```
 
-**4:** After that you should be able to build an application
+**5:** After that you should be able to build an application
 
-
-**Building apk with Gradle Wrapper (gradlew, built in in Android Studio):**
+**Building apk with Gradle Wrapper (gradlew, built in Android Studio):**
 ------------------------
 
-**1:** Navigate to project directory
+**1:** Navigate to work_directory
 ```
-For Driver:
-your_directory/rapidus-mobile-android/RapidusDriver/
-```
-```
-For Client:
-your_directory/rapidus-mobile-android/RapidusClient/
+$ cd work_directory/
 ```
 
 **2:** Give access for gradlew (only once, at first time)
@@ -47,33 +38,21 @@ $ chmod +x gradlew
 **3:** Make build
 ```
 For Debug:
-$ ./gradlew assembleDebug
+$ ./gradlew debug
 ```
-```
-For Release:
-$ ./gradlew assembleRelease
-```
-
 
 **Distributing apk with Fabric/Crashlytics plugin:**
 ------------------------
 
-**1:** Download and install Fabric plugin in Android Studio:
-```
-https://fabric.io/downloads
-```
+**1:** Download and install [Fabric plugin](https://fabric.io/downloads) in Android Studio:
 
 **2:** Edit emails distribution list in txt file:
 ```
-rapidus-mobile-android/RapidusDriver/beta_distribution_emails.txt
+work_dirrectory/beta_distribution_emails.txt
 ```
 
 **3:** Now build and distribute in one command:
 ```
 Debug
-$ ./gradlew assembleDebug crashlyticsUploadDistributionDebug --stacktrace
-```
-```
-Release
-$ ./gradlew assembleRelease crashlyticsUploadDistributionRelease --stacktrace
+$ ./gradlew debug crashlyticsUploadDistributionDebug --stacktrace
 ```
