@@ -3,7 +3,7 @@
 **Workspace setup process**
 ------------------------
 
-**1:** Navigate to your desired directory (here and later - 'Work' directory):
+**1:** Navigate to your desired directory (here and later - 'work_directory'):
 ```
 $ cd /path/to/your/desired/directory
 ```
@@ -13,30 +13,24 @@ $ cd /path/to/your/desired/directory
 $ git clone https://github.com/Raylyan/Cartop.git
 ```
 
-**3:** Open Android Studio, choose "Open an existing project", and open selected directory
+**3:** Download and install Android Studio:
 ```
-For Driver:
-your_directory/rapidus-mobile-android/RapidusDriver/
-```
-```
-For Client:
-your_directory/rapidus-mobile-android/RapidusClient/
+https://developer.android.com/studio/index.html
 ```
 
-**4:** After that you should be able to build an application
+**4:** Open Android Studio, choose "Open an existing project", and open selected directory
+```
+work_directory/
+```
 
+**5:** After that you should be able to build an application
 
 **Building apk with Gradle Wrapper (gradlew, built it in Android Studio):**
 ------------------------
 
-**1:** Navigate to project directory
+**1:** Navigate to work_directory
 ```
-For Driver:
-your_directory/rapidus-mobile-android/RapidusDriver/
-```
-```
-For Client:
-your_directory/rapidus-mobile-android/RapidusClient/
+$ cd work_directory/
 ```
 
 **2:** Give access for gradlew (only once, at first time)
@@ -54,7 +48,6 @@ For Release:
 $ ./gradlew assembleRelease
 ```
 
-
 **Distributing apk with Fabric/Crashlytics plugin:**
 ------------------------
 
@@ -65,7 +58,7 @@ https://fabric.io/downloads
 
 **2:** Edit emails distribution list in txt file:
 ```
-rapidus-mobile-android/RapidusDriver/beta_distribution_emails.txt
+work_dirrectory/beta_distribution_emails.txt
 ```
 
 **3:** Now build and distribute in one command:
