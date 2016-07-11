@@ -14,9 +14,9 @@ $ git clone https://github.com/Raylyan/Cartop.git
 ```
 
 **3:** Download and install Android Studio:
-```
+
 [Android Studio](https://developer.android.com/studio/index.html)
-```
+
 
 **4:** Open Android Studio, choose "Open an existing project", and open selected directory
 ```
