@@ -10,7 +10,7 @@ $ cd /path/to/your/desired/directory
 
 **2:**  Execute next command (clone git repo):
 ```
-$ git clone https://github.com/alexeypro/rapidus-mobile-android.git
+$ git clone https://github.com/Raylyan/Cartop.git
 ```
 
 **3:** Open Android Studio, choose "Open an existing project", and open selected directory
@@ -26,7 +26,7 @@ your_directory/rapidus-mobile-android/RapidusClient/
 **4:** After that you should be able to build an application
 
 
-**Building apk with Gradle Wrapper (gradlew, built in in Android Studio):**
+**Building apk with Gradle Wrapper (gradlew, built it in Android Studio):**
 ------------------------
 
 **1:** Navigate to project directory
