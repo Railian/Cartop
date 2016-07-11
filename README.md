@@ -13,7 +13,7 @@ $ cd /path/to/your/desired/directory
 $ git clone https://github.com/Raylyan/Cartop.git
 ```
 
-**3:** Download and install [Android Studio](https://developer.android.com/studio/index.html):
+**3:** Download and install [**Android Studio**](https://developer.android.com/studio/index.html):
 
 **4:** Open Android Studio, choose "Open an existing project", and open selected directory
 ```
@@ -44,7 +44,7 @@ $ ./gradlew debug
 **Distributing apk with Fabric/Crashlytics plugin:**
 ------------------------
 
-**1:** Download and install [Fabric plugin](https://fabric.io/downloads) in Android Studio:
+**1:** Download and install [**Fabric plugin**](https://fabric.io/downloads) in Android Studio:
 
 **2:** Edit emails distribution list in txt file:
 ```
