@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/item_program_info_header_tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        tools:text="Title: program_title" />
+
+    <TextView
+        android:id="@+id/item_program_info_header_tvId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        tools:text="id: program_id" />
+
+    <TextView
+        android:id="@+id/item_program_info_header_tvWidthHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        tools:text="width: widthdp, height: heightdp" />
+
+    <TextView
+        android:id="@+id/item_program_info_header_tvPositionXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        tools:text="position x: xpx, y: ypx" />
+
+    <TextView
+        android:id="@+id/item_program_info_header_tvShowCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        tools:text="show count: show_count" />
+
+    <TextView
+        android:id="@+id/item_program_info_header_tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        tools:text="status: status" />
+
+    <TextView
+        android:id="@+id/item_program_info_header_tvCreatedAt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        tools:text="created at: created_at" />
+
+    <TextView
+        android:id="@+id/item_program_info_header_tvCreatedBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        tools:text="created by: created_by" />
+
+</LinearLayout>

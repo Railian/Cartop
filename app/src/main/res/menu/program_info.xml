@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.program.info.ProgramInfoActivity">
+
+    <item
+        android:id="@+id/action_network_connected"
+        android:icon="@drawable/ic_network_connected"
+        android:title="@string/action_force_crash"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_network_not_connected"
+        android:icon="@drawable/ic_network_not_connected"
+        android:title="@string/action_force_crash"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_update_programs_list"
+        android:orderInCategory="90"
+        android:title="@string/action_update_programs_list"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_force_crash"
+        android:orderInCategory="110"
+        android:title="@string/action_force_crash"
+        app:showAsAction="never" />
+</menu>
