@@ -162,8 +162,12 @@ public class ApiManager {
 
 //                    long fileSize = body.contentLength();
 //                    long downloadedSize = 0;
-                    AdInfo adInfo = FileUtils.readAsJson(infoFile, AdInfo.class);
-                    if (adInfo == null) adInfo = new AdInfo();
+
+//                    AdInfo adInfo = FileUtils.readAsJson(infoFile, AdInfo.class);
+//                     if (adInfo == null) adInfo = new AdInfo();
+
+                    AdInfo adInfo = new AdInfo();
+                    adInfo.setStatus(AdInfo.DownloadStatus.NOT_DOWNLOADED);
 
                     if (adInfo.getStatus() == AdInfo.DownloadStatus.DOWNLOADED && adInfo.getFileSize() == body.contentLength()) {
                         return file;
@@ -206,7 +210,7 @@ public class ApiManager {
                     throwable = e;
                 } finally {
                     //noinspection ResultOfMethodCallIgnored
-//                    if (!complete) file.delete();
+                    if (!complete) file.delete();
                     if (inputStream != null) inputStream.close();
                     if (outputStream != null) outputStream.close();
                 }

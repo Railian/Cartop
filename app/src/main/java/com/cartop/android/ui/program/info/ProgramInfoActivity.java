@@ -109,6 +109,14 @@ public class ProgramInfoActivity extends AppCompatActivity
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        isVisible = true;
+        selectedProgram = (Program) spinner.getSelectedItem();
+        infoAdapter.setProgram(selectedProgram);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.program_info, menu);
         if (ConnectivityManager.get().isNetworkConnected()) {
@@ -162,22 +170,32 @@ public class ProgramInfoActivity extends AppCompatActivity
     //endregion
 
     //region Progress Tools
+    private String progressMessage;
+
     private void showLoadingProgramsProgress() {
+        progressMessage = "Loading programs...";
         //noinspection ConstantConditions
         getSupportActionBar().hide();
         fab.hide();
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.activity_activity_program_info_vProgressContainer, ProgressFragment.newInstance(ProgressTheme.LIGHT, Orientation.HORIZONTAL, "Loading programs..."), ProgressFragment.TAG)
-                .commit();
+        try {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.activity_activity_program_info_vProgressContainer, ProgressFragment.newInstance(ProgressTheme.LIGHT, Orientation.HORIZONTAL, progressMessage), ProgressFragment.TAG)
+                    .commit();
+        } catch (IllegalStateException ignored) {
+        }
     }
 
     private void showDownloadAdContentProgress(Ad ad) {
+        progressMessage = String.format("Loading ad content...\nad title: %s\nad id: %s", ad.getBody().getTitle(), ad.getBody().getId());
         //noinspection ConstantConditions
         getSupportActionBar().hide();
         fab.hide();
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.activity_activity_program_info_vProgressContainer, ProgressFragment.newInstance(ProgressTheme.DARK, Orientation.HORIZONTAL, String.format("Loading ad content...\nad title: %s\nad id: %s", ad.getBody().getTitle(), ad.getBody().getId()), "Dismiss"), ProgressFragment.TAG)
-                .commit();
+        try {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.activity_activity_program_info_vProgressContainer, ProgressFragment.newInstance(ProgressTheme.DARK, Orientation.HORIZONTAL, progressMessage, "Dismiss"), ProgressFragment.TAG)
+                    .commit();
+        } catch (IllegalStateException ignored) {
+        }
     }
 
     private void updateDownloadAdContentProgress(Ad ad, long fileSize, long fileSizeDownloaded) {
@@ -196,21 +214,29 @@ public class ProgramInfoActivity extends AppCompatActivity
     }
     //endregion
 
+    private boolean isVisible;
+
+    @Override
+    protected void onStop() {
+        isVisible = false;
+        super.onStop();
+    }
+
     //region Public Tools
     private void loadData(boolean networkConnected) {
         if (networkConnected) {
             showLoadingProgramsProgress();
             ApiManager.get().getPrograms(TAG, API_REQUEST_GET_PROGRAMS);
-            selectedProgram = (Program) spinner.getSelectedItem();
         } else {
             ProgramsPage defaultProgramsPage = new ProgramsPage();
             ArrayList<Program> defaultData = new ArrayList<>();
             defaultData.add(Program.getDefault());
             defaultProgramsPage.setData(defaultData);
             spinnerAdapter.setProgramsPage(defaultProgramsPage);
-            selectedProgram = (Program) spinner.getSelectedItem();
-            infoAdapter.setProgram(selectedProgram);
-            fab.show();
+            if (isVisible) {
+                selectedProgram = (Program) spinner.getSelectedItem();
+                infoAdapter.setProgram(selectedProgram);
+            }
         }
     }
     //endregion
@@ -250,10 +276,10 @@ public class ProgramInfoActivity extends AppCompatActivity
         public void onReceiveProgramsPage(int requestCode, ProgramsPage programsPage) {
             spinnerAdapter.setProgramsPage(programsPage);
             hideProgress();
-            selectedProgram = (Program) spinner.getSelectedItem();
-            infoAdapter.setProgram(selectedProgram);
-            fab.show();
-
+            if (isVisible) {
+                selectedProgram = (Program) spinner.getSelectedItem();
+                infoAdapter.setProgram(selectedProgram);
+            }
         }
 
         @Override
