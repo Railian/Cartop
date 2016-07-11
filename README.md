@@ -5,7 +5,7 @@
 
 **1:** Navigate to your desired directory (here and later - 'work_directory'):
 ```
-$ cd /path/to/your/desired/directory
+$ cd /work_directory
 ```
 
 **2:**  Execute next command (clone git repo):
@@ -17,7 +17,7 @@ $ git clone https://github.com/Raylyan/Cartop.git
 
 **4:** Open Android Studio, choose "Open an existing project", and open selected directory
 ```
-work_directory/
+/work_directory
 ```
 
 **5:** After that you should be able to build an application
@@ -27,7 +27,7 @@ work_directory/
 
 **1:** Navigate to work_directory
 ```
-$ cd work_directory/
+$ cd /work_directory
 ```
 
 **2:** Give access for gradlew (only once, at first time)
@@ -48,7 +48,7 @@ $ ./gradlew debug
 
 **2:** Edit emails distribution list in txt file:
 ```
-work_dirrectory/beta_distribution_emails.txt
+/work_directory/beta_distribution_emails.txt
 ```
 
 **3:** Now build and distribute in one command:
