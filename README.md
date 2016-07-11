@@ -22,7 +22,7 @@ work_directory/
 
 **5:** After that you should be able to build an application
 
-**Building apk with Gradle Wrapper (gradlew, built it in Android Studio):**
+**Building apk with Gradle Wrapper (gradlew, built in Android Studio):**
 ------------------------
 
 **1:** Navigate to work_directory
