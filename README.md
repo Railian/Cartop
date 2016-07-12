@@ -3,45 +3,51 @@
 **Workspace setup process**
 ------------------------
 
-**1:** Navigate to your desired directory (here and later - 'work_directory'):
+**1:** Download and install [**Git**](https://git-scm.com/download).
+
+**2:** Navigate to your desired directory (here and later - 'work_directory'):
 ```
 $ cd /work_directory
 ```
 
-**2:**  Execute next command (clone git repo):
+**3:**  Execute next command (clone git repo):
 ```
 $ git clone https://github.com/Raylyan/Cartop.git
 ```
 
-**3:** Download and install [**Android Studio**](https://developer.android.com/studio/index.html):
+**4:** Download and install [**Android Studio**](https://developer.android.com/studio/index.html)
 
-**4:** Open Android Studio, choose "Open an existing project", and open selected directory
+**5:** Open Android Studio, choose "Open an existing project", and open selected directory:
 ```
 /work_directory
 ```
 
-**5:** After that you should be able to build an application
+**5:** After that you should be able to build an application.
 
-**Building apk with Gradle Wrapper (gradlew, built in Android Studio):**
+**Building apk with Gradle Wrapper (gradlew, built in Android Studio)**
 ------------------------
 
-**1:** Navigate to work_directory
+**1:** Navigate to work_directory:
 ```
 $ cd /work_directory
 ```
 
-**2:** Give access for gradlew (only once, at first time)
+**2:** Give access for gradlew (only once, at first time):
 ```
 $ chmod +x gradlew
 ```
 
-**3:** Make build
+**3:** Make build:
 ```
-For Debug:
-$ ./gradlew debug
+$ ./gradlew assembleDebug
 ```
 
-**Distributing apk with Fabric/Crashlytics plugin:**
+**4:** If **BUILD SUCCESSFUL**, apk file will be generated at:
+```
+/work_directory/app/build/outputs/apk/app-debug.apk
+```
+
+**Distributing apk with Fabric/Crashlytics plugin**
 ------------------------
 
 **1:** Download and install [**Fabric plugin**](https://fabric.io/downloads) in Android Studio:
@@ -53,6 +59,5 @@ $ ./gradlew debug
 
 **3:** Now build and distribute in one command:
 ```
-Debug
-$ ./gradlew debug crashlyticsUploadDistributionDebug --stacktrace
+$ ./gradlew assembleDebug crashlyticsUploadDistributionDebug --stacktrace
 ```
