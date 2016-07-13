@@ -4,23 +4,33 @@ Workspace setup process
 -----------------------
 
 1. Download and install [**Git**](https://git-scm.com/download).
+
 2. Navigate to your desired directory:
+
     ```
     $ cd path/to/your/desired/directory
     ```
+
 3. Execute next command (clone git repo):
+
     ```
     $ git clone https://github.com/alexeypro/rapidus-cartop.git
     ```
+
 4. Navigate to the project directory (here and later - 'work_directory')
+
     ```
     $ cd rapidus-cartop 
     ```
+
 5. Download and install [**Android Studio**](https://developer.android.com/studio/index.html)
+
 6. Open Android Studio, choose "Open an existing project", and open selected directory:
+
     ```
     /work_directory
     ```
+
 7. After that you should be able to build an application.
 
 Building apk with Gradle Wrapper (gradlew, built in Android Studio)
