@@ -7,7 +7,7 @@ Workspace setup process
 
 2. Navigate to your desired directory:
     ```
-    $ cd path/to/your/desired/directory
+    $ cd /path/to/your/desired/directory
     ```
 
 3. Execute next command (clone git repo):
@@ -17,7 +17,7 @@ Workspace setup process
 
 4. Navigate to the project directory (here and later - 'work_directory')
     ```
-    $ cd rapidus-cartop 
+    $ cd /rapidus-cartop 
     ```
 
 5. Download and install [**Android Studio**](https://developer.android.com/studio/index.html)
@@ -37,7 +37,7 @@ Building apk with Gradle Wrapper (gradlew, built in Android Studio)
   * Navigate to your Android SDK directory 
     ```
     For Mac:
-    $ cd Library/Android/sdk
+    $ cd /Library/Android/sdk
     ```
     
   * Get list packages available for installation or upgrade:
